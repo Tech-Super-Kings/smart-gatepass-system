@@ -38,7 +38,7 @@ export function SecurityVisitorCard({
           <InfoTile icon={CalendarDays} label="Visit date" value={formatDateLabel(visitor.visitDate)} />
           <InfoTile icon={Clock3} label="Visit time" value={formatTimeLabel(visitor.visitTime)} />
           <InfoTile icon={MapPin} label="Location / Unit" value={visitor.locationUnit} className="sm:col-span-2" />
-          <InfoTile icon={ShieldCheck} label="Pass code" value={visitor.passCode} />
+          <InfoTile icon={ShieldCheck} label="Pass code" value={visitor.passCode || "Pending approval"} />
           <InfoTile icon={ShieldCheck} label="Purpose" value={visitor.purpose} />
         </div>
       </Card>
@@ -71,7 +71,7 @@ export function SecurityVisitorCard({
           <TimelineItem label="Created" value={formatDateTimeLabel(visitor.createdAt)} />
           <TimelineItem label="Entry time" value={visitor.entryTime ? formatDateTimeLabel(visitor.entryTime) : "Not marked yet"} />
           <TimelineItem label="Exit time" value={visitor.exitTime ? formatDateTimeLabel(visitor.exitTime) : "Not marked yet"} />
-          <TimelineItem label="QR payload" value={visitor.qrValue} mono />
+          <TimelineItem label="QR payload" value={visitor.qrValue || "QR not generated yet"} mono />
         </div>
       </Card>
     </div>

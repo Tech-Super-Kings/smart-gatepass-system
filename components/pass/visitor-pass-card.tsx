@@ -80,7 +80,7 @@ export function VisitorPassCard({ visitor, qrImage }: VisitorPassCardProps) {
           <TimelineItem label="Scheduled date" value={formatDateLabel(visitor.visitDate)} />
           <TimelineItem label="Scheduled time" value={formatTimeLabel(visitor.visitTime)} />
           <TimelineItem label="Current status" value={visitor.status} />
-          <TimelineItem label="QR payload" value={visitor.qrValue} mono />
+          <TimelineItem label="QR payload" value={visitor.qrValue || "QR not generated yet"} mono />
         </div>
       </Card>
     </div>

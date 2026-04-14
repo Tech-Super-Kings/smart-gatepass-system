@@ -88,7 +88,7 @@ function generateQrValue(passCode: string) {
   return `smartgatepass:${passCode}:${crypto.randomUUID()}`;
 }
 
-function normalizeVisitorRecord(record: Partial<VisitorRecord> & Record<string, unknown>): VisitorRecord {
+function normalizeVisitorRecord(record: Record<string, unknown>): VisitorRecord {
   const mongoId = "_id" in record && typeof record._id === "object" && record._id !== null && "toString" in record._id
     ? (record._id as { toString(): string }).toString()
     : undefined;
