@@ -77,7 +77,7 @@ export function AdminDashboard() {
               visitor.passCode,
               visitor.locationUnit,
               visitor.purpose,
-            ].some((value) => value.toLowerCase().includes(query));
+            ].some((value) => String(value ?? "").toLowerCase().includes(query));
 
       return matchesStatus && matchesSearch;
     });

@@ -1,3 +1,15 @@
+function toIsoString(value: unknown): string {
+  if (value instanceof Date) {
+    return value.toISOString();
+  }
+
+  if (typeof value === "string" || typeof value === "number") {
+    const date = new Date(value);
+    return Number.isNaN(date.getTime()) ? new Date().toISOString() : date.toISOString();
+  }
+
+  return new Date().toISOString();
+}
 import "server-only";
 
 import crypto from "crypto";
@@ -90,18 +102,13 @@ function normalizeVisitorRecord(record: Partial<VisitorRecord> & Record<string, 
     visitDate: String(record.visitDate ?? ""),
     visitTime: String(record.visitTime ?? ""),
     locationUnit: String(record.locationUnit ?? ""),
-    passCode: String(record.passCode ?? ""),
-    qrValue: String(record.qrValue ?? ""),
+    passCode: typeof record.passCode === "string" ? record.passCode : null,
+    qrValue: typeof record.qrValue === "string" ? record.qrValue : null,
     status: (record.status as VisitorStatus) ?? "pending",
     flowType: (record.flowType as VisitorRecord["flowType"]) ?? "pre_registered",
-    createdAt:
-      record.createdAt instanceof Date
-        ? record.createdAt.toISOString()
-        : String(record.createdAt ?? new Date().toISOString()),
-    entryTime:
-      record.entryTime instanceof Date ? record.entryTime.toISOString() : (record.entryTime as string | null) ?? null,
-    exitTime:
-      record.exitTime instanceof Date ? record.exitTime.toISOString() : (record.exitTime as string | null) ?? null,
+    createdAt: toIsoString(record.createdAt),
+    entryTime: record.entryTime ? toIsoString(record.entryTime) : null,
+    exitTime: record.exitTime ? toIsoString(record.exitTime) : null,
   };
 }
 

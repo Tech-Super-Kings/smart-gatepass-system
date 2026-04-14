@@ -23,14 +23,12 @@ export default async function VisitorPassPage({ params }: PageProps) {
     notFound();
   }
 
-  const qrImage = await QRCode.toDataURL(visitor.qrValue, {
+  const qrSource = visitor.qrValue ?? visitor.passCode ?? visitor.id;
+
+  const qrImage = await QRCode.toDataURL(qrSource, {
     errorCorrectionLevel: "M",
     margin: 1,
     width: 280,
-    color: {
-      dark: "#0f172a",
-      light: "#ffffff",
-    },
   });
 
   return (

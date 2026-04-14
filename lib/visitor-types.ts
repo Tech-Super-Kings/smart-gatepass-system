@@ -15,13 +15,13 @@ export type CreateVisitorPayload = {
 
 export type VisitorRecord = CreateVisitorPayload & {
   id: string;
-  passCode: string;
-  qrValue: string;
+  passCode?: string | null;
+  qrValue?: string | null;
   status: VisitorStatus;
   flowType: VisitorFlowType;
   createdAt: string;
-  entryTime: string | null;
-  exitTime: string | null;
+  entryTime?: string | null;
+  exitTime?: string | null;
 };
 
 export type VisitorStatusFilter = VisitorStatus | "all";
