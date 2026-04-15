@@ -4,15 +4,11 @@ Smart Digital GatePass is a modern visitor management system designed to replace
 
 It is built for apartments, offices, campuses, and gated communities to improve security, reduce waiting time, and maintain real-time visitor records.
 
----
-
 ## Live Links
 
 - Production Website: https://www.smartgatepass.me/
 - Deployment (Vercel): https://smart-gatepass-system-two.vercel.app/
 - Video Presentation: https://drive.google.com/drive/folders/1f0OpC8jHS0avGB1jTpAaMz5XAB4J4_gG?usp=sharing
-
----
 
 ## Problem
 
@@ -22,8 +18,6 @@ Most existing visitor management systems are still manual or inefficient. Common
 - Lack of real-time tracking  
 - Poor verification methods  
 - No proper record management  
-
----
 
 ## Solution
 
@@ -36,8 +30,6 @@ This project introduces a digital gate pass system with:
 - Centralized admin monitoring  
 
 It ensures better security and a smoother entry experience without replacing essential verification steps.
-
----
 
 ## Features
 
@@ -66,8 +58,6 @@ It ensures better security and a smoother entry experience without replacing ess
 - Host can approve or reject requests  
 - Supports unplanned visits securely  
 
----
-
 ## Tech Stack
 
 **Frontend**
@@ -85,8 +75,6 @@ It ensures better security and a smoother entry experience without replacing ess
 **Deployment**
 - Vercel  
 
----
-
 ## Project Structure
 
 ```
@@ -96,8 +84,6 @@ lib/         Utility functions and services
 models/      Database models  
 public/      Static assets  
 ```
-
----
 
 ## Setup Instructions
 
@@ -120,16 +106,12 @@ Run the development server:
 npm run dev
 ```
 
----
-
 ## Current Status
 
 - MVP completed and deployed  
 - Core workflows implemented (Host, Visitor, Security, Admin)  
 - MongoDB integration completed  
 - Walk-in visitor approval flow implemented  
-
----
 
 ## Future Improvements
 
@@ -139,7 +121,6 @@ npm run dev
 - Advanced analytics dashboard  
 - IoT-based gate integration  
 
----
 
 ## Team
 
@@ -150,7 +131,6 @@ Tech Super Kings
 - Vigneshwaran Vinayagamoorthy - SECURITY & SYSTEM DESIGNER
 - PIYUSH KUMAR - DATABASE & INTEGRATION ENGINEER
 
----
 
 ## License
 
